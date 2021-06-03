@@ -11,6 +11,7 @@ alembic = "*"
 uvicorn = "*"
 gunicorn = "*"
 python-dotenv = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
