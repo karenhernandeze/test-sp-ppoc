@@ -1,16 +1,16 @@
 # main.py
 import uvicorn
 from fastapi import FastAPI
-import os
-from fastapi_sqlalchemy import DBSessionMiddleware
-from fastapi_sqlalchemy import db
-from models import Notes as ModelUser
-from schema import Notes as SchemaUser
-from dotenv import load_dotenv
+# import os
+# from fastapi_sqlalchemy import DBSessionMiddleware
+# from fastapi_sqlalchemy import db
+# from models import Notes as ModelUser
+# from schema import Notes as SchemaUser
+# from dotenv import load_dotenv
 
-import os
-import psycopg2
-import dj_database_url
+# import os
+# import psycopg2
+# import dj_database_url
 
 
 # BASE_DIR = os.path.dirname(os.path.abspath(__file__))
