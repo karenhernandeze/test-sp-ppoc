@@ -6,18 +6,21 @@ from typing import List
 from fastapi import FastAPI
 from pydantic import BaseModel
 import os
+import psycopg2
 from fastapi_sqlalchemy import DBSessionMiddleware
 from fastapi_sqlalchemy import db
 from models import Notes as ModelUser
 from schema import Notes as SchemaUser
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-load_dotenv(os.path.join(BASE_DIR, ".env"))
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 app = FastAPI()
 
-app.add_middleware(DBSessionMiddleware, db_url=os.environ["DATABASE_URL"])
+# app.add_middleware(DBSessionMiddleware, db_url=os.environ["DATABASE_URL"])
+db_url=os.environ.get('HEROKU_POSTGRESQL_YELLOW_URL')
+conn = psycopg2.connect(db_url, sslmode='require')
 
 
 @app.get("/")
