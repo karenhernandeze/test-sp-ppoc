@@ -12,6 +12,7 @@ uvicorn = "*"
 gunicorn = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
