@@ -13,15 +13,15 @@ import psycopg2
 import dj_database_url
 
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-load_dotenv(os.path.join(BASE_DIR, ".env"))
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 # DATABASE_URL = os.environ['HEROKU_POSTGRESQL_YELLOW_URL']
 
 # conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASE_URL = os.environ['DATABASE_URL'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASE_URL = os.environ['DATABASE_URL'].update(db_from_env)
 # DATABASES['default'].update(db_from_env)
 
 
@@ -46,14 +46,14 @@ def hello():
 #     return note
 
 
-@app.post("/user/", response_model=SchemaUser)
-def create_user(user: SchemaUser):
-    db_user = ModelUser(
-        text=user.text
-    )
-    db.session.add(db_user)
-    db.session.commit()
-    return db_user
+# @app.post("/user/", response_model=SchemaUser)
+# def create_user(user: SchemaUser):
+#     db_user = ModelUser(
+#         text=user.text
+#     )
+#     db.session.add(db_user)
+#     db.session.commit()
+#     return db_user
 
 
 if __name__ == "__main__":
