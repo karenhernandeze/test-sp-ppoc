@@ -24,10 +24,29 @@ app.add_middleware(DBSessionMiddleware, db_url=os.environ["DATABASE_URL"])
 def hello():
     return {"message":"Hello TutLinks.com"}
 
+# @app.get("/notes/", response_model=List[SchemaUser])
+# def create_user():
+#     # db_user = ModelUser(
+#     #     text=user.first_name, last_name=user.last_name, age=user.age
+#     # )
+#     note = db.session.query(ModelUser)
+#     return note
+
 @app.get("/notes/", response_model=SchemaUser)
-def create_user():
+def get_user():
     # db_user = ModelUser(
     #     text=user.first_name, last_name=user.last_name, age=user.age
     # )
-    note = db.session.query(ModelUser).first()
+    print(db.session.query(ModelUser).count())
+    note = db.session.query(ModelUser).get(8)
     return note
+
+
+@app.post("/user/", response_model=SchemaUser)
+def create_user(user: SchemaUser):
+    db_user = ModelUser(
+        text=user.text
+    )
+    db.session.add(db_user)
+    db.session.commit()
+    return db_user
