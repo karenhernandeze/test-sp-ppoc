@@ -8,8 +8,8 @@ from pydantic import BaseModel
 import os
 from fastapi_sqlalchemy import DBSessionMiddleware
 # from fastapi_sqlalchemy import db
-# from models import User as ModelUser
-# from schema import User as SchemaUser
+from models import Notes as ModelUser
+from schema import Notes as SchemaUser
 from dotenv import load_dotenv
 
 # DATABASE_URL = "postgresql://postgres:12345678@database-2.ckgekixw3q0p.us-east-1.rds.amazonaws.com/postgres"
