@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 # database = databases.Database(DATABASE_URL)
 # # metadata = sqlalchemy.MetaData()
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# load_dotenv(os.path.join(BASE_DIR, ".env"))
+load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 
 app = FastAPI()
