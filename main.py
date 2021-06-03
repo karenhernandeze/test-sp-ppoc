@@ -6,8 +6,8 @@ from typing import List
 from fastapi import FastAPI
 from pydantic import BaseModel
 import os
-# from fastapi_sqlalchemy import DBSessionMiddleware
-# from fastapi_sqlalchemy import db
+from fastapi_sqlalchemy import DBSessionMiddleware
+from fastapi_sqlalchemy import db
 # from models import User as ModelUser
 # from schema import User as SchemaUser
 from dotenv import load_dotenv
