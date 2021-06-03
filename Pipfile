@@ -8,6 +8,7 @@ fastapi = "*"
 fastapi-sqlalchemy = "*"
 pydantic = "*"
 alembic = "*"
+uvicorn = "*"
 
 [dev-packages]
 
