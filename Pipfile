@@ -12,7 +12,7 @@ uvicorn = "*"
 gunicorn = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
-dj-database-url = "*"
+databases = {extras = ["postgresql"], version = "*"}
 
 [dev-packages]
 
